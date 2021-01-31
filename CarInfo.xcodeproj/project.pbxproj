@@ -13,6 +13,7 @@
 		0486C45625C6F0F200DA04A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0486C45425C6F0F200DA04A5 /* Main.storyboard */; };
 		0486C45825C6F0F400DA04A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0486C45725C6F0F400DA04A5 /* Assets.xcassets */; };
 		0486C45B25C6F0F400DA04A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0486C45925C6F0F400DA04A5 /* LaunchScreen.storyboard */; };
+		0486C46525C6F9E700DA04A5 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0486C46425C6F9E700DA04A5 /* SecondViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		0486C45725C6F0F400DA04A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0486C45A25C6F0F400DA04A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0486C45C25C6F0F400DA04A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0486C46425C6F9E700DA04A5 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				0486C45725C6F0F400DA04A5 /* Assets.xcassets */,
 				0486C45925C6F0F400DA04A5 /* LaunchScreen.storyboard */,
 				0486C45C25C6F0F400DA04A5 /* Info.plist */,
+				0486C46425C6F9E700DA04A5 /* SecondViewController.swift */,
 			);
 			path = CarInfo;
 			sourceTree = "<group>";
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0486C46525C6F9E700DA04A5 /* SecondViewController.swift in Sources */,
 				0486C45325C6F0F200DA04A5 /* ViewController.swift in Sources */,
 				0486C44F25C6F0F200DA04A5 /* AppDelegate.swift in Sources */,
 				0486C45125C6F0F200DA04A5 /* SceneDelegate.swift in Sources */,

@@ -1,24 +1,134 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CarInfo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T3x-Cp-fwc">
+                                <rect key="frame" x="115" y="575" width="144" height="72"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="T3x-Cp-fwc" secondAttribute="height" multiplier="2:1" id="z2p-sO-55N"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="Component 4 – 1"/>
+                                <connections>
+                                    <segue destination="3GD-En-84O" kind="presentation" modalPresentationStyle="fullScreen" id="3vG-Wr-4Hg"/>
+                                </connections>
+                            </button>
+                            <searchBar contentMode="scaleToFill" searchBarStyle="prominent" showsBookmarkButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DAW-a8-Io2">
+                                <rect key="frame" x="23" y="185" width="328" height="56"/>
+                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="google"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
+                            </searchBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Car registration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zB1-uC-Q7F">
+                                <rect key="frame" x="20" y="69" width="198" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please wait" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ed4-a6-zAI">
+                                <rect key="frame" x="115" y="305" width="131" height="32.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Checking with DVLA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P5Q-MX-uc5">
+                                <rect key="frame" x="60" y="377.5" width="309" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="T3x-Cp-fwc" secondAttribute="trailing" constant="116" id="4yV-pf-bI5"/>
+                            <constraint firstItem="P5Q-MX-uc5" firstAttribute="top" secondItem="Ed4-a6-zAI" secondAttribute="bottom" constant="40" id="H56-eU-u8f"/>
+                            <constraint firstItem="Ed4-a6-zAI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="115" id="JMf-r3-VQr"/>
+                            <constraint firstItem="DAW-a8-Io2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="23" id="MFK-bM-yj6"/>
+                            <constraint firstItem="zB1-uC-Q7F" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Mao-i8-4AX"/>
+                            <constraint firstItem="P5Q-MX-uc5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="Q6t-s0-dYU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="T3x-Cp-fwc" secondAttribute="bottom" constant="20" id="bzX-Df-VrO"/>
+                            <constraint firstItem="DAW-a8-Io2" firstAttribute="top" secondItem="zB1-uC-Q7F" secondAttribute="bottom" constant="80" id="caZ-BT-mht"/>
+                            <constraint firstItem="T3x-Cp-fwc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="115" id="fCZ-6I-BY2"/>
+                            <constraint firstItem="DAW-a8-Io2" firstAttribute="centerX" secondItem="T3x-Cp-fwc" secondAttribute="centerX" id="i3N-pz-o8V"/>
+                            <constraint firstItem="Ed4-a6-zAI" firstAttribute="top" secondItem="DAW-a8-Io2" secondAttribute="bottom" constant="64" id="pEb-a4-Smr"/>
+                            <constraint firstItem="zB1-uC-Q7F" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="69" id="qt7-0r-ztC"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="carSearchBar" destination="DAW-a8-Io2" id="V8W-Ar-w39"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="172" y="11.244377811094454"/>
+        </scene>
+        <!--Second View Controller-->
+        <scene sceneID="mdL-EC-quH">
+            <objects>
+                <viewController id="3GD-En-84O" customClass="SecondViewController" customModule="CarInfo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Uvn-qi-Ol6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fNq-Hk-CWu">
+                                <rect key="frame" x="20" y="24" width="74" height="22"/>
+                                <state key="normal" title="Button" image="arrow.backward" catalog="system"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" id="xf6-MY-f3V"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vW1-lE-4ag">
+                                <rect key="frame" x="115" y="576.5" width="141" height="70.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="vW1-lE-4ag" secondAttribute="height" multiplier="2:1" id="6Cq-Dh-NnG"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="Component 4-2"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" id="yo9-xE-Fi7"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="nyX-sm-x2g"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="fNq-Hk-CWu" firstAttribute="top" secondItem="nyX-sm-x2g" secondAttribute="top" constant="24" id="8wb-1b-wDx"/>
+                            <constraint firstItem="fNq-Hk-CWu" firstAttribute="leading" secondItem="nyX-sm-x2g" secondAttribute="leading" constant="20" id="ZV9-no-Ywe"/>
+                            <constraint firstItem="vW1-lE-4ag" firstAttribute="leading" secondItem="nyX-sm-x2g" secondAttribute="leading" constant="115" id="kTV-Vf-yXB"/>
+                            <constraint firstItem="nyX-sm-x2g" firstAttribute="bottom" secondItem="vW1-lE-4ag" secondAttribute="bottom" constant="20" id="n6E-v2-OOf"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UVm-7I-dzW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1060" y="13"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="xf6-MY-f3V"/>
+    </inferredMetricsTieBreakers>
+    <resources>
+        <image name="Component 4 – 1" width="90" height="12"/>
+        <image name="Component 4-2" width="87" height="12"/>
+        <image name="arrow.backward" catalog="system" width="128" height="98"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
