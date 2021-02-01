@@ -29,7 +29,7 @@ final class SecondViewController: UIViewController {
 
 extension SecondViewController {
     
-    func downloadPhoto(){
+   private func downloadPhoto(){
         guard let url = URL(string: "https://www.jimbars.co.uk/wp-content/uploads/2020/01/vw-logo-1.png") else { return }
         
         if let data = try? Data(contentsOf: url) {
