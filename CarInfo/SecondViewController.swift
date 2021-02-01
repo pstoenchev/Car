@@ -12,7 +12,17 @@ import UIKit
 
 final class SecondViewController: UIViewController {
     
+    /// Register number of vehicles.
+    @IBOutlet weak var registerLabel: UILabel! {
+        didSet {
+            registerLabel.layer.cornerRadius = 7
+            registerLabel.layer.masksToBounds = true
+        }
+    }
+    
+    /// Image get from server.
     @IBOutlet private weak var imageView: UIImageView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

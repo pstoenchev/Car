@@ -28,12 +28,14 @@
                             </button>
                             <searchBar contentMode="scaleToFill" searchBarStyle="prominent" showsBookmarkButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DAW-a8-Io2">
                                 <rect key="frame" x="23" y="185" width="328" height="56"/>
-                                <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="google"/>
                                 <scopeButtonTitles>
                                     <string>Title</string>
                                     <string>Title</string>
                                 </scopeButtonTitles>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="yo0-D5-bGe"/>
+                                </connections>
                             </searchBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Car registration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zB1-uC-Q7F">
                                 <rect key="frame" x="20" y="69" width="198" height="36"/>
@@ -253,8 +255,8 @@ complete! 👍</string>
                                     <constraint firstAttribute="width" constant="129" id="lfE-Tc-ALX"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RK17 RCO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vvH-Mz-RaD">
-                                <rect key="frame" x="180" y="371" width="116.5" height="31.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  RK17 RCO     " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vvH-Mz-RaD">
+                                <rect key="frame" x="109.5" y="371" width="156.5" height="31.5"/>
                                 <color key="backgroundColor" red="0.88218045420000002" green="0.72060152720000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <nil key="textColor"/>
@@ -270,11 +272,11 @@ complete! 👍</string>
                             <constraint firstItem="XYO-TP-MOg" firstAttribute="top" secondItem="nyX-sm-x2g" secondAttribute="top" constant="125" id="JC6-Py-ojW"/>
                             <constraint firstItem="nyX-sm-x2g" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="VMc-4z-UEQ" secondAttribute="bottom" constant="30" id="LPD-JL-x6l"/>
                             <constraint firstItem="IvW-81-BFh" firstAttribute="top" secondItem="nyX-sm-x2g" secondAttribute="top" constant="24" id="LUo-HC-JOW"/>
+                            <constraint firstItem="vvH-Mz-RaD" firstAttribute="centerX" secondItem="Uvn-qi-Ol6" secondAttribute="centerX" id="Vsi-Oa-W3o"/>
                             <constraint firstItem="fNq-Hk-CWu" firstAttribute="leading" secondItem="nyX-sm-x2g" secondAttribute="leading" constant="20" id="ZV9-no-Ywe"/>
                             <constraint firstItem="alw-lF-GC3" firstAttribute="leading" secondItem="nyX-sm-x2g" secondAttribute="leading" constant="20" id="b0t-X4-ved"/>
                             <constraint firstItem="VMc-4z-UEQ" firstAttribute="top" secondItem="alw-lF-GC3" secondAttribute="bottom" constant="47.5" id="dwC-ha-Jb8"/>
                             <constraint firstItem="nyX-sm-x2g" firstAttribute="trailing" secondItem="Qbh-o1-W3d" secondAttribute="trailing" constant="123" id="fBs-Fs-jme"/>
-                            <constraint firstItem="nyX-sm-x2g" firstAttribute="trailing" secondItem="vvH-Mz-RaD" secondAttribute="trailing" constant="78.5" id="h26-Ay-c27"/>
                             <constraint firstItem="VMc-4z-UEQ" firstAttribute="leading" secondItem="nyX-sm-x2g" secondAttribute="leading" constant="20" id="mgi-Rb-RcK"/>
                             <constraint firstItem="Qbh-o1-W3d" firstAttribute="top" secondItem="XYO-TP-MOg" secondAttribute="bottom" constant="20" id="o8d-A1-pci"/>
                             <constraint firstItem="alw-lF-GC3" firstAttribute="top" secondItem="Qbh-o1-W3d" secondAttribute="bottom" constant="58" id="rBy-Ve-KMq"/>
@@ -283,6 +285,7 @@ complete! 👍</string>
                     </view>
                     <connections>
                         <outlet property="imageView" destination="Qbh-o1-W3d" id="O2p-Vb-OyV"/>
+                        <outlet property="registerLabel" destination="vvH-Mz-RaD" id="8DK-pv-oPB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UVm-7I-dzW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
