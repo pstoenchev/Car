@@ -18,11 +18,6 @@ final class SecondViewController: UIViewController {
         super.viewDidLoad()
         downloadPhoto()
     }
-    
-
-    @IBAction private func closebutton(_ sender: UIButton) {
-        dismiss(animated: true)
-    }
 }
 
 // MARK: - Actions
