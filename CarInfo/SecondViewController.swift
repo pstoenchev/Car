@@ -20,6 +20,8 @@ final class SecondViewController: UIViewController {
         }
     }
     
+    let defaults = UserDefaults.standard
+    
     /// Image get from server.
     @IBOutlet private weak var imageView: UIImageView!
     
@@ -39,6 +41,10 @@ extension SecondViewController {
         
         if let data = try? Data(contentsOf: url) {
             imageView.image = UIImage(data: data)
+            defaults.set(data, forKey: "imageVW")
+        } else {
+            guard  let storageImage = UserDefaults.standard.data(forKey: "imageVW") else { return }
+            imageView.image = UIImage(data: storageImage)
         }
     }
 }
