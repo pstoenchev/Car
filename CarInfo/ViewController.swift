@@ -12,12 +12,12 @@ import UIKit
 
 final class ViewController: UIViewController {
     
-    @IBOutlet private weak var carSearchBar: UISearchBar! {
-        didSet {
-            carSearchBar.searchTextField.backgroundColor = .white
-        }
+    @IBOutlet private weak var carSearchBar: UISearchBar!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        carSearchBar.searchTextField.backgroundColor = .white
     }
-
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         carSearchBar.setImage(UIImage(named: "icon"), for: .search, state: .normal)

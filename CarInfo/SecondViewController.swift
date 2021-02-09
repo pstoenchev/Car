@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import SDWebImage
 
 // MARK: - Class Definition
 
@@ -19,9 +19,7 @@ final class SecondViewController: UIViewController {
             registerLabel.layer.masksToBounds = true
         }
     }
-    
-    let defaults = UserDefaults.standard
-    
+//    
     /// Image get from server.
     @IBOutlet private weak var imageView: UIImageView!
     
@@ -36,15 +34,8 @@ final class SecondViewController: UIViewController {
 
 extension SecondViewController {
     
-   private func downloadPhoto(){
-        guard let url = URL(string: "https://www.jimbars.co.uk/wp-content/uploads/2020/01/vw-logo-1.png") else { return }
+    private func downloadPhoto() {
         
-        if let data = try? Data(contentsOf: url) {
-            imageView.image = UIImage(data: data)
-            defaults.set(data, forKey: "imageVW")
-        } else {
-            guard  let storageImage = UserDefaults.standard.data(forKey: "imageVW") else { return }
-            imageView.image = UIImage(data: storageImage)
-        }
+        imageView.sd_setImage(with: URL(string: "https://www.jimbars.co.uk/wp-content/uploads/2020/01/vw-logo-1.png"), placeholderImage: UIImage(named: "placeholder.png"))
     }
 }
