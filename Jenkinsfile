@@ -1,50 +1,41 @@
 pipeline {
     agent any
+    
     environment {
-        SWIFT_VERSION = "5.7" // Specify the Swift version
+        LC_ALL = 'en_US.UTF-8'
+        LANG = 'en_US.UTF-8'
+        WORKSPACE = "${env.WORKSPACE}"
+        
+        // Update these according to your project
+        SCHEME_NAME = 'CarInfo'
+        PROJECT_NAME = 'CarInfo.xcodeproj'
     }
+    
     stages {
+        stage('Cleanup') {
+            steps {
+                echo 'Cleaning up workspace...'
+                cleanWs()
+                sh 'rm -rf ~/Library/Developer/Xcode/DerivedData/*'
+            }
+        }
+        
         stage('Checkout') {
             steps {
-                echo 'Checking out the repository...'
+                echo 'Checking out source code...'
                 checkout scm
             }
         }
-        stage('Setup') {
-            steps {
-                echo 'Setting up the environment...'
-                sh '''
-                    swift --version
-                '''
-            }
-        }
+        
         stage('Build') {
             steps {
-                echo 'Building the project...'
-                sh '''
-                    swift build --disable-sandbox
-                '''
-            }
-        }
-        stage('Test') {
-            steps {
-                echo 'Running tests...'
-                sh '''
-                    swift test --disable-sandbox
-                '''
-            }
-        }
-    }
-    post {
-        always {
-            echo 'Cleaning up workspace...'
-            cleanWs()
-        }
-        success {
-            echo 'Build and tests completed successfully!'
-        }
-        failure {
-            echo 'Build or tests failed.'
-        }
-    }
-}
+                echo 'Building the app...'
+                sh """
+                    xcodebuild clean build \
+                    -project ${PROJECT_NAME} \
+                    -scheme ${SCHEME_NAME} \
+                    -configuration Debug \
+                    -destination 'platform=iOS Simulator,name=iPhone 14,OS=16.0' \
+                    CODE_SIGN_IDENTITY="" \
+                    CODE_SIGNING_REQUIRED=NO \
+                    CODE_SIGNING_ALLOWED=
