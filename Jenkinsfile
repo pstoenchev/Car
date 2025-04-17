@@ -1,1 +1,50 @@
-pipeline { agent { label 'macos' // Make sure your Jenkins node is macOS with Xcode installed } environment { PROJECT_NAME = 'Car' SCHEME = 'Car' DESTINATION = 'platform=iOS Simulator,name=iPhone 14,OS=17.0' CONFIGURATION = 'Debug' } stages { stage('Checkout') { steps { checkout scm } } stage('Install Dependencies') { steps { script { if (fileExists('Podfile')) { sh 'pod install' } } } } stage('Build') { steps { sh """ xcodebuild clean build \\ -workspace ${env.PROJECT_NAME}.xcworkspace \\ -scheme ${env.SCHEME} \\ -destination '${env.DESTINATION}' \\ -configuration ${env.CONFIGURATION} \\ CODE_SIGNING_ALLOWED=NO """ } } stage('Test') { steps { sh """ xcodebuild test \\ -workspace ${env.PROJECT_NAME}.xcworkspace \\ -scheme ${env.SCHEME} \\ -destination '${env.DESTINATION}' \\ -configuration ${env.CONFIGURATION} """ } } stage('Archive (Optional)') { when { branch 'main' } steps { sh """ xcodebuild archive \\ -workspace ${env.PROJECT_NAME}.xcworkspace \\ -scheme ${env.SCHEME} \\ -archivePath build/${env.PROJECT_NAME}.xcarchive \\ -configuration Release \\ CODE_SIGNING_ALLOWED=NO """ } } } post { always { junit '**/Logs/Test/*.xcresult' // Optional: for test result integration } } }
+pipeline {
+    agent any
+    environment {
+        SWIFT_VERSION = "5.7" // Specify the Swift version
+    }
+    stages {
+        stage('Checkout') {
+            steps {
+                echo 'Checking out the repository...'
+                checkout scm
+            }
+        }
+        stage('Setup') {
+            steps {
+                echo 'Setting up the environment...'
+                sh '''
+                    swift --version
+                '''
+            }
+        }
+        stage('Build') {
+            steps {
+                echo 'Building the project...'
+                sh '''
+                    swift build --disable-sandbox
+                '''
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Running tests...'
+                sh '''
+                    swift test --disable-sandbox
+                '''
+            }
+        }
+    }
+    post {
+        always {
+            echo 'Cleaning up workspace...'
+            cleanWs()
+        }
+        success {
+            echo 'Build and tests completed successfully!'
+        }
+        failure {
+            echo 'Build or tests failed.'
+        }
+    }
+}
